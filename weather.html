@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+}
+
+.chat-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.chat-box {
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    overflow-y: scroll;
+    max-height: 300px;
+}
+
+.chat-header {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.chat-messages {
+    margin-bottom: 10px;
+}
+
+#user-input {
+    width: 80%;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+#send-button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#send-button:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-box">
+            <div class="chat-header">Chatbot</div>
+            <div class="chat-messages" id="chat-messages"></div>
+            <input type="text" id="user-input" placeholder="Sualınızı yazın...">
+            <button id="send-button">Göndər</button>
+        </div>
+    </div>
+    <script>
+        var responses = {
+    "salam": "Salam! Sizə necə kömək edə bilərəm?",
+    "bakida hava necedir": "Bakida hava 20 derecedir ",
+    "cenub,şimal": "Hava orta temperaturdu.Agac ve bitki ekimine uygun zamandir",
+    "yagis ve firtina":"Xeyr,Noyabrin ortalarina qeder hava orta temperatur olaraq qeyd edilir"
+    
+    // Daha çox sual və cavab əlavə edin
+};
+
+function chatbotCavabla(sual) {
+    sual = sual.toLowerCase();
+    var cavab = responses[sual];
+    if (cavab === undefined) {
+        return "Üzr istəyirəm, cavab verə bilmirəm.";
+    }
+    return cavab;
+}
+
+var chatMessages = document.getElementById("chat-messages");
+var userInput = document.getElementById("user-input");
+var sendButton = document.getElementById("send-button");
+
+sendButton.addEventListener("click", function() {
+    var sual = userInput.value;
+    if (sual.trim() !== "") {
+        var userMessage = '<div class="user-message">Siz: ' + sual + '</div>';
+        var botMessage = '<div class="bot-message">Chatbot: ' + chatbotCavabla(sual) + '</div>';
+        chatMessages.innerHTML += userMessage + botMessage;
+        userInput.value = "";
+        chatMessages.scrollTop = chatMessages.scrollHeight;
+    }
+});
+
+userInput.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        sendButton.click();
+    }
+});
+    </script>
+</body>
+</html>

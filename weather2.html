@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEATHER APP</title>
+    <link rel="stylesheet" href="weather.css">
+    
+</head>
+<body>
+    <div class="header">
+        <h1>WEATHER APP</h1>
+        
+        
+        <div>
+            <input type="text" id="input" placeholder="Enter city name...">
+            <button id="search">Search</button>
+
+        </div>
+    </div>
+    <main>
+        <div class="weather">
+            <h2 id="city">Delhi,IN</h2>
+            <div class="temp-box"><img src="foto/weathericon.png" alt="" id="img">
+            <p id="temperature">26°</p>
+        </div>
+            <span id="clouds">Broken Cloud</span>
+        </div>
+<div class="divider1">
+    <div class="forecasth">
+        <p class="cast-header"> Upcoming forecast</p>
+        <div class="templist">
+            <div class="next">
+                <div >
+                    <p class="time">8:30PM</p>
+                    <p> 29°C / 25°C </p>
+                </div>
+                <p class="desc"> Light Rain</p>
+            </div>
+            <div class="next">
+                <div >
+                    <p class="time">8:30PM</p>
+                    <p> 29°C / 25°C </p>
+                </div>
+                <p class="desc"> Light Rain</p>
+            </div>
+            <div class="next">
+                <div >
+                    <p class="time">8:30PM</p>
+                    <p> 29°C / 25°C </p>
+                </div>
+                <p class="desc"> Light Rain</p>
+            </div>
+            <div class="next">
+                <div >
+                    <p class="time">8:30PM</p>
+                    <p> 29°C / 25°C </p>
+                </div>
+                <p class="desc"> Light Rain</p>
+            </div>
+
+        </div>
+    </div>
+</div>
+<button class="open-button" onclick="openForm()"><a href="weather.html">Chat</a></button>
+
+<div class="chat-popup" id="myForm">
+  <form class="form-container">
+     
+    <h1>Chat</h1>
+
+    <label for="msg"><b>Message</b></label>
+    <textarea placeholder="Type message.." name="msg" required></textarea>
+
+
+    
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+    </main>
+    <div class="forecstd">
+        <div class="divider2"></div>
+        <p class="cast-header">Next 4 Days Forecast</p>
+        <div class="weekF">
+            <div class="dayF">
+                <p class="date"> Sun Oct 9 2023</p>
+                <p>31°C / 25°C</p>
+                <p class="desc"> Overcast Clouds</p>
+            </div>
+            <div class="dayF">
+                <p class="date"> Sun Oct 9 2023</p>
+                <p>31°C / 25°C</p>
+                <p class="desc"> Overcast Clouds</p>
+            </div>
+            <div class="dayF">
+                <p class="date"> Sun Oct 9 2023</p>
+                <p>31°C / 25°C</p>
+                <p class="desc"> Overcast Clouds</p>
+            </div>
+            <div class="dayF">
+                <p class="date"> Sun Oct 9 2023</p>
+                <p>31°C / 25°C</p>
+                <p class="desc"> Overcast Clouds</p>
+            </div>
+        </div>
+    </div>
+    <script src="/weather.js" type="module">
+           
+    </script>
+  
+</body>
+</html>
